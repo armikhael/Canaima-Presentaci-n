@@ -295,7 +295,16 @@
 </div>
 
 <script src="js/impress.js"></script>
-<script>impress().init();</script>
+<script>
+impress().init();
+var autoAdvTime = 2000; //Time to wait before advancing all other slides. (Milliseconds)
+    impress().init();
+    window.setTimeout(autoAdv, autoAdvTime); 
+    function autoAdv() {
+        impress().next();
+        window.setTimeout(autoAdv,autoAdvTime);
+    }
+</script>
 
 </body>
 </html>
